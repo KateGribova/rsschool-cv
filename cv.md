@@ -2,6 +2,8 @@
 
 ## Ekaterina Gribova
 
+![Ekaterina Gribova](/rsschool-cv/image.jpg)
+
 ### CONTACT
 
 Discord: maxmeti(@KateGribova)
