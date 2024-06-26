@@ -2,7 +2,7 @@
 
 ## Ekaterina Gribova
 
-![Ekaterina Gribova](/rsschool-cv/image.jpg)
+![Ekaterina Gribova](image.jpg)
 
 ### CONTACT
 
