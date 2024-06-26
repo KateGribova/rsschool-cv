@@ -44,6 +44,21 @@ Incomplete Higher Education — **Applied Informatics**
 
 ### EXAMPLE OF PROGRAM CODE
 
+```JAVASCRIPT
+function betterThanAverage(classPoints, yourPoints) {
+  let average = 0;
+  for (let i = 0; i < classPoints.length - 1; i++){
+    average = average + classPoints[i];
+  }
+  average = average/classPoints.length;
+  if (yourPoints < average){
+    return false;
+  } else {
+    return true;
+  }
+}
+```
+
 ### LANGUAGE
 
 Russian - Native
