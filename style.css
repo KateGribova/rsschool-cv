@@ -1,0 +1,70 @@
+main{
+    padding: 50px 0px 50px 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: #41549a;
+    
+}
+
+header, footer{
+    margin-top: 50px;
+    padding: 50px 0px 50px 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: #41549a;
+    background-color: #ffd7e9;
+    display: block;
+}
+
+
+ul, p{
+    padding-top: 10px;
+}
+
+img{
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+.contact, .about-me, .education, .skills, .example-code, .language, .experience{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.contact, .about-me, .education, .skills, .language, .experience{
+    line-height: 25px;
+}
+
+.education__elem1, .education__elem2, .education__elem3{
+    padding-top: 20px;
+}
+
+code{
+    color: rgb(54, 89, 157);
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav1, .nav2{
+    padding-right: 50px;
+    padding-top: 0;
+}
