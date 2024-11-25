@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>rsschool-cv</title>
   </head>
   <body>
@@ -61,28 +59,28 @@ function createBracket(bracketsConfig){
   for (let i = 0; i &lt; bracketsConfig.length; i++){
     BRACKETS.set(bracketsConfig[i][0], bracketsConfig[i][1]);
   }
-}        
+}
 module.exports = function check(str, bracketsConfig) {
   createBracket(bracketsConfig);
   let stack = [];
   for (let i = 0; i &lt; str.length; i++){
     if (stack.length &gt; 0 &amp;&amp; str[i] === BRACKETS.get(str[i]) &amp;&amp; str[i] === stack.at(-1)){
       stack.splice(stack.length - 1, 1);
-    }     
+    }
     else if (BRACKETS.has(str[i])){
       stack.push(str[i]);
-    }    
+    }
     else{
       if (str[i] === BRACKETS.get(stack[stack.length - 1])){
           stack.splice(stack.length - 1, 1);
       }
       else
           return false;
-    }     
+    }
     if (stack.length === 0 &amp;&amp; i === str.length - 1){
         return true;
     }
-  }     
+  }
   if (stack.length != 0)
     return false;
 }</code></pre>
