@@ -67,7 +67,7 @@
 let BRACKETS = new Map();
 
 function createBracket(bracketsConfig){
-  for (let i = 0; i &lt bracketsConfig.length; i++){
+  for (let i = 0; i &lt; bracketsConfig.length; i++){
     BRACKETS.set(bracketsConfig[i][0], bracketsConfig[i][1]);
   }
 }
@@ -75,7 +75,7 @@ function createBracket(bracketsConfig){
 module.exports = function check(str, bracketsConfig) {
   createBracket(bracketsConfig);
   let stack = [];
-  for (let i = 0; i &lt str.length; i++){
+  for (let i = 0; i &lt; str.length; i++){
     if (stack.length > 0 && str[i] === BRACKETS.get(str[i]) && str[i] === stack.at(-1)){
       stack.splice(stack.length - 1, 1);
     }
