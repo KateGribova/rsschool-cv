@@ -76,7 +76,7 @@ module.exports = function check(str, bracketsConfig) {
   createBracket(bracketsConfig);
   let stack = [];
   for (let i = 0; i &lt; str.length; i++){
-    if (stack.length > 0 && str[i] === BRACKETS.get(str[i]) && str[i] === stack.at(-1)){
+    if (stack.length &gt; 0 &amp;&amp; str[i] === BRACKETS.get(str[i]) &amp;&amp; str[i] === stack.at(-1)){
       stack.splice(stack.length - 1, 1);
     }
           
@@ -92,7 +92,7 @@ module.exports = function check(str, bracketsConfig) {
           return false;
     }
               
-    if (stack.length === 0 && i === str.length - 1){
+    if (stack.length === 0 &amp;&amp; i === str.length - 1){
         return true;
     }
   }
