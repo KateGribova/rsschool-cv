@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/rsschool-cv/reset.css">
-    <link rel="stylesheet" href="/rsschool-cv/style.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,34 +15,25 @@
   <body>
     <header>
         <h1>EKATERINA GRIBOVA</h1>
-        <img src="/rsschool-cv/image.jpg" alt="photoByAuthor" width="500">
+        <img src="./image.jpg" alt="photoByAuthor" width="500">
     </header>
     <main>
       <div class="contact">
         <h2>CONTACT</h2>
         <ul>
           <li>Discord: maxmeti(@KateGribova)</li>
-          <li>
-            Email:
-            <a href="mailto:gloooomrine@gmail.com">gloooomrine@gmail.com</a>
-          </li>
+          <li>Email:<a href="mailto:gloooomrine@gmail.com">gloooomrine@gmail.com</a></li>
           <li>Telegram: <a href="https://t.me/maxmeti">@maxmeti</a></li>
         </ul>
       </div>
       <div class="about-me">
         <h2>ABOUT ME</h2>
         <p>
-          I am a beginner web developer. I am developing in front-end
-          development. I really want to become a great specialist.
+          My name is Katya, I am 21 years old. Я studying at a technical university, additionally studying web development. <br> I'm doing Frontend-development course at RS School. 
         </p>
       </div>
       <div class="education">
         <h2>EDUCATION</h2>
-        <div class="education__elem1">
-          <h3>2019-2022</h3>
-          <p>Secondary vocational Education — <strong>Economics and Accounting</strong>.</p>
-          <p>Banking College of Srednerussky Institute of Management, Orel</p>
-        </div>
         <div class="education__elem2">
           <h3>2022-2023</h3>
           <p>Course — <strong>Digital Product Design</strong>.</p>
@@ -73,17 +64,41 @@
       <div class="example-code">
         <h2>EXAMPLE OF PROGRAM CODE</h2>
         <pre><code>
-function betterThanAverage(classPoints, yourPoints) {
-    let average = 0;
-    for (let i = 0; i &lt; classPoints.length - 1; i++){
-        average = average + classPoints[i];
+let BRACKETS = new Map();
+
+function createBracket(bracketsConfig){
+  for (let i = 0; i &lt bracketsConfig.length; i++){
+    BRACKETS.set(bracketsConfig[i][0], bracketsConfig[i][1]);
+  }
+}
+          
+module.exports = function check(str, bracketsConfig) {
+  createBracket(bracketsConfig);
+  let stack = [];
+  for (let i = 0; i &lt str.length; i++){
+    if (stack.length > 0 && str[i] === BRACKETS.get(str[i]) && str[i] === stack.at(-1)){
+      stack.splice(stack.length - 1, 1);
     }
-    average = average/classPoints.length;
-    if (yourPoints &lt; average){
-        return false;
-    } else {
+          
+    else if (BRACKETS.has(str[i])){
+      stack.push(str[i]);
+    }
+          
+    else{
+      if (str[i] === BRACKETS.get(stack[stack.length - 1])){
+          stack.splice(stack.length - 1, 1);
+      }
+      else
+          return false;
+    }
+              
+    if (stack.length === 0 && i === str.length - 1){
         return true;
     }
+  }
+          
+  if (stack.length != 0)
+    return false;
 }</code></pre>
       </div>
       <div class="language">
@@ -95,7 +110,9 @@ function betterThanAverage(classPoints, yourPoints) {
       </div>
       <div class="experience">
         <h2>PROFESSIONAL EXPERIENCE</h2>
-        <p>Team development of a weather website over a 6-month period.</p>
+        <p>Team development of a weather website over a 6 month period.</p>
+        <p>Working with API as part of image gallery creation.</p>
+        <p>Adaptive multi-page website of a Christmas gift shop.</p>
       </div>
     </main>
     <footer>
